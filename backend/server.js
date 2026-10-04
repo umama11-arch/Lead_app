@@ -9,7 +9,6 @@ const connectdb=require("./config/db")
 const app = express();
 
 app.use(cors({
-
   origin: "https://lead-app-p348.vercel.app",
   methods: ["GET", "POST", "OPTIONS"],
   allowedHeaders: ["Content-Type"],
