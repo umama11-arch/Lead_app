@@ -14,6 +14,7 @@ app.use(cors({
   methods: ["GET", "POST", "OPTIONS"],
   allowedHeaders: ["Content-Type"],
   optionsSuccessStatus: 200
+  
 }));
 
 app.options("*", cors());
