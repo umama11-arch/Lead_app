@@ -6,12 +6,18 @@ require("dotenv").config();
 const checkWebsite = require("./services/websitechecker");
 const connectdb=require("./config/db")
 
-const app=express();
+const app = express();
+
 app.use(cors({
-origin:"https://lead-app-p348-1v0m831sg-umama-ishaq-s-projects.vercel.app"
-}
-))
-app.use(express.json())
+  origin: "https://lead-app-p348-1v0m831sg-umama-ishaq-s-projects.vercel.app",
+  methods: ["GET", "POST", "OPTIONS"],
+  allowedHeaders: ["Content-Type"],
+  optionsSuccessStatus: 200
+}));
+
+app.options("*", cors());
+
+app.use(express.json());
 connectdb();
 app.get(`/getss`,(req,res)=>{
     res.send("Running")
