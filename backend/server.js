@@ -16,7 +16,7 @@ app.use(cors({
 
 }));
 
-app.options("*", cors());
+
 
 app.use(express.json());
 connectdb();
